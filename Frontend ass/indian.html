@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Cuisines</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button id="darkModeToggle" aria-label="Toggle dark mode">🌓</button>
+    <header>
+        <div class="container">
+            <h1>Exploring Indian Cuisines</h1>
+        </div>
+    </header>
+
+    <div id="main-content" class="container">
+        <h2>Discover the Rich Flavors of Indian Food</h2>
+        <p>
+            The remarks of Indian culture had first seen in ancient times but exploded in the 15th century by trading.
+            Besides, during the colonial period, with the lack of labour, a large number of Indian Muslims had migrated
+            to Malaysia with their traditions, culture, and of course food. Explore four distinct Indian cuisines and
+            learn about their signature dishes below.
+        </p>
+
+        <div class="indian-grid">
+            <div class="cuisine" onclick="toggleRecipe('BLR')">
+                <div class="image-container">
+                    <img src="images\indianfood1.jpg" alt="Banana Leaf Rice">
+                </div>
+                <h3>Banana Leaf Rice</h3>
+                <div id="BLR" class="recipe">
+                    Banana leaf rice is a traditional Malaysian dish that holds great significance in Malaysian
+                    culture. It is a unique culinary experience that tantalizes the taste buds and all the senses.
+                    This popular dish originated from the South Indian community in Malaysia. It has become a staple
+                    in the Malaysian food scene ever since.
+                </div>
+            </div>
+
+            <div class="cuisine" onclick="toggleRecipe('biryani')">
+                <div class="image-container">
+                    <img src="images\indianfood2.jpg" alt="Biryani">
+                </div>
+                <h3>Biryani</h3>
+                <div id="biryani" class="recipe">
+                    Biryani came to Singapore and Malaysia from India but the dish originated in Persia (today's
+                    Iran).The hearty, flavour and aroma packed meat and rice dish is one of the favourites in Malaysia
+                    and Singapore cuisine.
+
+                    The word biryani is derived from two Persian words. Birinj is the Persian word for "rice". The
+                    Persian word Birian means "to fry before cooking" which succinctly sums up the basic method of
+                    cooking biryani.
+                </div>
+            </div>
+
+            <div class="cuisine" onclick="toggleRecipe('roti-canai')">
+                <div class="image-container">
+                    <img src="images\indianfood3.jpg" alt="Roti Canai">
+                </div>
+                <h3>Roti Canai</h3>
+                <div id="roti-canai" class="recipe">
+                    Roti Canai, the beloved Malaysian flatbread, is more than just a staple food but a cultural icon
+                    that embodies the rich tapestry of Malaysian cuisine.
+                    <br>
+                    Originally from South India, this delectable dish has seamlessly woven its way into the hearts and
+                    plates of Malaysians and become an integral part of their culinary heritage.
+                    <br>
+                    Roti Canai's journey to becoming Malaysia's national bread is a fascinating tale of cultural fusion
+                    and adaptation.
+                    <br>
+                    Despite its Indian origins, this menu has evolved into a distinctly Malaysian dish, thanks to the
+                    influence of Tamil immigrants who arrived in Malaysia during the colonial era.
+                    <br>
+                    Known as Indian Muslims or Mamaks, these immigrants brought with them not just their culinary
+                    traditions but also their unique blend of spices, flavors, and cooking techniques.
+                </div>
+            </div>
+
+            <div class="cuisine" onclick="toggleRecipe('CTM')">
+                <div class="image-container">
+                    <img src="images\indianfood4.jpg" alt="Chicken Tikka Masala">
+                </div>
+                <h3>Chicken Tikka Masala</h3>
+                <div id="CTM" class="recipe">
+                    As well known, curries are many kinds of food that contain a complex combination of spices and
+                    herbs, generally prepared in a sauce. Most commonly used ones are coriander, ginger, turmeric,
+                    cumin, and of course chiles. These spices can be used either whole or ground and cooked or raw. With
+                    the influence of Indian curries, Malaysia had found its own way. Rendang, tamarind, garlic, chilli
+                    peppers, ginger, shallots, and coconut milk have become the most typical ingredients for Malaysian
+                    curries.
+                    <br>
+                    Chicken Tikka Masala in Malaysia is a delightful fusion of Indian and Malay flavours, showcasing the
+                    diversity and creativity of Malaysian cuisine. The marriage of aromatic spices, tender chicken, and
+                    creamy coconut-based gravy creates an explosion of flavours that will leave your taste buds craving
+                    more. Whether you're a fan of Indian cuisine, Malaysian food, or simply an adventurous foodie,
+                    exploring the Malaysian rendition of Chicken Tikka Masala is a must-try experience that is sure to
+                    delight your senses.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Indian Cuisines. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            if (recipe.style.display === "none" || recipe.style.display === "") {
+                recipe.style.display = "block";
+            } else {
+                recipe.style.display = "none";
+            }
+        }
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            // Save dark mode preference
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', null);
+            }
+        });
+    </script>
+</body>
+
+</html>
